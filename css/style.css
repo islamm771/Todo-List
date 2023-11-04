@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: #9C27B0 !important;
+}
+.form{
+    display: flex;
+    gap: 10px;
+    width: 600px;
+    margin: 5rem auto 2rem auto;
+}
+.form .input{
+    width: 75%;
+    position: relative;
+}
+.form .clear{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    top: 1px;
+    right: 0px;
+    color: #ddd;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.form .clear:hover{
+    color: red;
+}
+
+.list{
+    background-color: #fff;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+}
+
+.list .title{
+    display: flex;
+    gap: 15px;
+}
+.list .title h5{
+    font-weight: 700;
+}
+.list .title span{
+    flex: 1;
+    text-align: right;
+}
+.list .title span button{
+    background-color: transparent;
+    border: none;
+    outline: 0;
+}
+.list .title span button:hover{
+    color: red !important;
+}
+
+
+.list ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list ul li{
+    padding: 15px 0;
+    display: flex;
+    gap: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.list ul li input:checked ~ label{
+    text-decoration: line-through;
+}
+
+.list ul li span{
+    flex: 1;
+    text-align: right;
+}
+.list ul li span .delete{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.list ul li span img{
+    width: 20px;
+    margin-top: -5px;
+}
+
+
+
+
+@media (min-width:320px) and (max-width:480px){
+    .form,.list{
+        width: 100%;
+    }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center pt-5 text-light">Todo List</h1>
+        <div class="form">
+            <div class="input">
+                <input type="text" class="form-control" placeholder="What will you do today ?">
+                <button class="clear">&times;</button>
+            </div>
+            <button class="btn btn-primary add">Add</button>
+            <div class="select">
+                <select class="form-select" id="inputGroupSelect01">
+                    <option selected>All</option>
+                    <option value="in progress">In Progress</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+        </div>
+        <div class="list">
+            <div class="title">
+                <h5>Tasks</h5>
+                <span>
+                    <button class="clear-all text-black-50">Clear All</button>
+                </span>
+            </div>
+            <p class="text-center text-black-50 m-0">List is Empty</p>
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
