@@ -81,7 +81,7 @@ body{
     flex: 1;
     text-align: right;
 }
-.list ul li span .delete{
+.list ul li span .edit , .list ul li span .delete{
     border: none;
     outline: none;
     background-color: transparent;
