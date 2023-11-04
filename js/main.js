@@ -4,37 +4,55 @@ let clearBtn = document.querySelector('.form .clear');
 let addBtn = document.querySelector('.form .add');
 let selectOption = document.querySelector('.form .select select');
 let clearAllBtn = document.querySelector(".list .title .clear-all");
-let itemDeleteBtns;
-
 
 function createElements(value){
         let item = document.createElement("li");
 
         let itemCheck = document.createElement("input");
+        let iteminput = document.createElement("input");
         itemCheck.setAttribute("type", "checkbox");
-
+        iteminput.classList.add('form-control')
+        iteminput.classList.add('d-none')
+        iteminput.value = value;
         let itemLabel = document.createElement("label");
         itemLabel.innerText = value;
 
         let itemSpan = document.createElement('span');
-        let itemBtn = document.createElement('button');
-        itemBtn.classList.add("delete")
-        itemBtn.onclick = function () {  
-            listContainer.removeChild(itemBtn.parentElement.parentElement);
-            if(listContainer.childElementCount == 0){
-                document.querySelector(".list p").style.display = 'block'
-            }
+        let itemEditBtn = document.createElement('button');
+        let itemDeleteBtn = document.createElement('button');
+
+        itemDeleteBtn.classList.add("delete");
+        itemEditBtn.classList.add('edit')
+
+        itemDeleteBtn.onclick = function () {
+          listContainer.removeChild(itemDeleteBtn.parentElement.parentElement);
+          if(listContainer.childElementCount == 0){
+              document.querySelector(".list p").style.display = 'block'
+          }
+        };
+
+        itemEditBtn.onclick = function () { 
+          itemLabel.classList.toggle('d-none')
+          iteminput.classList.toggle("d-none");
+          itemLabel.innerText = iteminput.value;
         }
+
+        let itemEditeImg = document.createElement('img');
+        itemEditeImg.setAttribute("src", "./imgs/edit.png");
         let itemDeleteImg = document.createElement('img');
-        itemDeleteImg.setAttribute("src", "./imgs/icons8-trash-24.png");
+        itemDeleteImg.setAttribute("src", "./imgs/trash.png");
 
 
-        itemBtn.append(itemDeleteImg)
-        itemSpan.append(itemBtn)
+        itemEditBtn.append(itemEditeImg);
+        itemDeleteBtn.append(itemDeleteImg);
+        
+        itemSpan.append(itemEditBtn);
+        itemSpan.append(itemDeleteBtn);
 
 
         item.append(itemCheck);
         item.append(itemLabel);
+        item.append(iteminput)
         item.append(itemSpan)
         return item;
 }
